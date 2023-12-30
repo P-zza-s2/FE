@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/elements/Header';
 import { MY_PROJECT_SUBJECTS } from '../../constant/myProjectSubjects';
-import {
-  getMyProject,
-  getMyProjectInProgress,
-  getMyProjectPending,
-  getMyProjectRejected,
-  getMyProjectStoped,
-} from '../../api/project';
+import { getMyProject } from '../../api/project';
 import './MyProject.scss';
 import { useNavigate } from 'react-router-dom';
+import complete from '../../images/my-project/completed.svg';
+import inProgress from '../../images/my-project/inProgress.svg';
+import pending from '../../images/my-project/pending.svg';
+import rejected from '../../images/my-project/rejected.svg';
+import stoped from '../../images/my-project/stopped.svg';
+import right_arrow from '../../assets/icons/right_arrow.svg';
 
 const MyProject = () => {
   const [myProject, setMyProject] = useState([]);
-  const [inProgress, setInProgress] = useState([]);
-  const [pending, setPending] = useState([]);
-  const [complete, setComplete] = useState([]);
-  const [rejected, setRejected] = useState([]);
-  const [stoped, setStoped] = useState([]);
+
   const navigate = useNavigate();
 
   const projectStates = {
@@ -51,18 +47,32 @@ const MyProject = () => {
       <Header title="내 프로젝트" useType="myProject" />
       <article className="myProject">
         <ul className="myProjectList">
-          {MY_PROJECT_SUBJECTS.map((subject) => {
-            const projectCount = projectStates[subject.stateKey]?.length || 0;
-            console.log(projectStates[subject]);
+          {MY_PROJECT_SUBJECTS.map((subject, i) => {
+            const projectCount =
+              myProject.find((p) => p.apply_status === subject.name)?.count ||
+              0;
+            const imageSrc = projectStates[subject.stateKey];
+
             return (
               <li
                 key={subject.name}
                 onClick={() =>
-                  navigate('./list', { state: { headerTitle: subject.name } })
+                  navigate('./list', {
+                    state: { headerTitle: subject.name + ' 프로젝트' },
+                  })
                 }
               >
-                <p>{projectCount}</p>
-                <p>{subject.name}</p>
+                <p>
+                  {subject.name} 프로젝트
+                  <img src={right_arrow} />
+                </p>
+                <div>
+                  <p>{projectCount}</p>
+                  <span style={{ color: 'black' }}>개</span>
+                </div>
+                <div>
+                  <img src={imageSrc} />
+                </div>
               </li>
             );
           })}
