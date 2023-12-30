@@ -31,7 +31,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/mainpage" element={<Main></Main>} />
           <Route
-            path="/project-about"
+            path="/project-about/:id"
             element={<ProjectAbout></ProjectAbout>}
           />
 

@@ -176,9 +176,13 @@ export const getMyProjectStoped = async (access_key) => {
 };
 
 // 프로젝트 상세페이지 조회
-export const getProjectDetail = async (projectId) => {
+export const getProjectDetail = async (projectId, access_key) => {
   try {
-    const response = await instance.get(`/project/${projectId}`);
+    const response = await instance.get(`/project/${projectId}`, {
+      headers: {
+        ACCESS_KEY: access_key, // 헤더는 이곳에
+      },
+    });
     return response.data;
   } catch (error) {
     console.error(error);
