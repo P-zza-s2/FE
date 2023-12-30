@@ -13,6 +13,7 @@ import { Recommendation } from './pages/create-topic/Recommendation';
 import { Main } from './pages/Main';
 import { Project, ProjectAbout } from './pages/project/ProjectAbout';
 import End from './pages/End';
+import MyProjectList from './pages/project/MyProjectList';
 
 function App() {
   function setScreenSize() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/create-project" element={<CreateProject />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
+          <Route path="/myproject/list" element={<MyProjectList />} />
           <Route path="/myproject/:id/finish" element={<End />} />
         </Routes>
       </Layout>

@@ -37,7 +37,7 @@ export function CreateProject() {
 
   useEffect(() => {
     localStorage.setItem('project', []);
-    console.log(valueStep);
+    console.log(values);
 
     const handleCreateProject = async () => {
       const storedAccessKey = localStorage.getItem('ACCESS_KEY');

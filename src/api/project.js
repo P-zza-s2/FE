@@ -55,6 +55,25 @@ export const getAllProjects = async ({ offset, id }) => {
   }
 };
 
+// 내 프로젝트 조회
+export const getMyProject = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects',
+      // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 // 프로젝트 등록
 export const ProjectCreation = async (data, access_key) => {
   const response = await instance.post('/project', data, {
@@ -64,7 +83,6 @@ export const ProjectCreation = async (data, access_key) => {
   });
   console.log(response.data);
 };
-
 // 프로젝트 상세페이지 조회
 export const getProjectDetail = async (projectId) => {
   try {
@@ -82,17 +100,6 @@ export const getMyProjectProgress = async ({ projectId, progressId }) => {
     const response = await instance.get(
       `/project/${projectId}/progress/${progressId}`
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 조회
-export const getMyProject = async () => {
-  try {
-    const response = await instance.get('/my-projects');
     return response.data;
   } catch (error) {
     console.error(error);
