@@ -28,22 +28,25 @@ const MyProjectList = () => {
   return (
     <div>
       <Header title={headerTitle} useType="myProject" />
-      <article className="myProject">
+      {/* <article className="myProject">
         <ul className="myProjectList">
-          {/* {MY_PROJECT_SUBJECTS.map((subject) => {
-            const projectCount = projectStates[subject.stateKey]?.length || 0;
-            return (
-              <li
-                key={subject.name}
-                onClick={() => navigate('../myproject/:id')}
-              >
-                <p>{projectCount}</p>
-                <p>{subject.name}</p>
-              </li>
-            );
-          })} */}
+          <div className="project-section">
+            <ul>
+              {filteredData.map((item) => (
+                <li key={item.project_id}>
+                  <ProjectCard
+                    id={item.project_id}
+                    status={item.project_status}
+                    name={item.project_name}
+                    desc={item.project_desc}
+                    mem={item.team_members}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </ul>
-      </article>
+      </article> */}
     </div>
   );
 };
