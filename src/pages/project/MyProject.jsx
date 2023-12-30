@@ -42,7 +42,6 @@ const MyProject = () => {
       try {
         const data = await getMyProjectInProgress(access_key);
         setInProgress((prev) => [...prev, ...data]);
-        console.log(status_inProgress);
         return data; //return 을 꼭 해주어야 한다!!!
       } catch (error) {
         console.error('프로젝트 데이터를 불러오는 데 실패했습니다:', error);
@@ -55,8 +54,8 @@ const MyProject = () => {
       const access_key = JSON.parse(storedAccessKey);
       try {
         const data = await getMyProjectPending(access_key);
-        setPending(data);
-        console.log(myProject);
+        setPending((prev) => [...prev, ...data]);
+        return data;
       } catch (error) {
         console.error('프로젝트 데이터를 불러오는 데 실패했습니다:', error);
       }
@@ -68,8 +67,8 @@ const MyProject = () => {
       const access_key = JSON.parse(storedAccessKey);
       try {
         const data = await getMyProjectCompleted(access_key);
-        setComplete(data);
-        console.log(myProject);
+        setComplete((prev) => [...prev, ...data]);
+        return data;
       } catch (error) {
         console.error('프로젝트 데이터를 불러오는 데 실패했습니다:', error);
       }
@@ -81,7 +80,8 @@ const MyProject = () => {
       const access_key = JSON.parse(storedAccessKey);
       try {
         const data = await getMyProjectRejected(access_key);
-        setRejected(data);
+        setRejected((prev) => [...prev, ...data]);
+        return data;
       } catch (error) {
         console.error('프로젝트 데이터를 불러오는 데 실패했습니다:', error);
       }
@@ -93,8 +93,8 @@ const MyProject = () => {
       const access_key = JSON.parse(storedAccessKey);
       try {
         const data = await getMyProjectStoped(access_key);
-        setStoped(data);
-        console.log(myProject);
+        setStoped((prev) => [...prev, ...data]);
+        return data;
       } catch (error) {
         console.error('프로젝트 데이터를 불러오는 데 실패했습니다:', error);
       }
@@ -126,7 +126,10 @@ const MyProject = () => {
       }
 
       navigate('./list', {
-        state: { headerTitle: subjectName + ' 프로젝트' },
+        state: {
+          headerTitle: subjectName + ' 프로젝트',
+          projectData: data,
+        },
       });
     } catch (error) {
       console.error(

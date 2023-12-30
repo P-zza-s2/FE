@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/elements/Header';
 import './MyProject.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
 
 const MyProjectList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const headerTitle = location.state?.headerTitle || '기본 제목';
+  const projectData = location.state?.projectData || 'null';
 
   useEffect(() => {
+    console.log(projectData);
     //전체 프로젝트 조회
     const getMyProjects = async () => {
       //   const storedAccessKey = localStorage.getItem('ACCESS_KEY');
@@ -28,25 +31,20 @@ const MyProjectList = () => {
   return (
     <div>
       <Header title={headerTitle} useType="myProject" />
-      {/* <article className="myProject">
-        <ul className="myProjectList">
-          <div className="project-section">
-            <ul>
-              {filteredData.map((item) => (
-                <li key={item.project_id}>
-                  <ProjectCard
-                    id={item.project_id}
-                    status={item.project_status}
-                    name={item.project_name}
-                    desc={item.project_desc}
-                    mem={item.team_members}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ul>
-      </article> */}
+
+      <ul>
+        {projectData.map((item) => (
+          <li key={item.project_id}>
+            <ProjectCard
+              id={item.project_id}
+              status={item.project_status}
+              name={item.project_name}
+              desc={item.project_desc}
+              mem={item.team_members}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
