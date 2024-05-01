@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
 import './ProjectCard.scss';
+
 import { useNavigate } from 'react-router-dom';
-import { getProjectDetail } from '../../api/project';
 
 export function ProjectCard({ id, status, name, desc, mem }) {
   const navigate = useNavigate();
