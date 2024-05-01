@@ -14,11 +14,7 @@ import { CreateTopic } from './pages/create-topic/CreateTopic';
 import { Recommendation } from './pages/create-topic/Recommendation';
 import End from './pages/End';
 import { Main } from './pages/Main';
-import MyProject from './pages/project/MyProject';
 import { ProjectAbout } from './pages/project/ProjectAbout';
-import ProjectDetail from './pages/project/ProjectDetail';
-import SignUp from './pages/sign-up/SignUp';
-import Start from './pages/Start';
 
 function App() {
   function setScreenSize() {
@@ -36,7 +32,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/mainpage" element={<Main></Main>} />
           <Route
-            path="/project-about"
+            path="/project-about/:id"
             element={<ProjectAbout></ProjectAbout>}
           />
 
@@ -45,6 +41,7 @@ function App() {
           <Route path="/create-project" element={<CreateProject />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
+          <Route path="/myproject/list" element={<MyProjectList />} />
           <Route path="/myproject/:id/finish" element={<End />} />
         </Routes>
       </Layout>
