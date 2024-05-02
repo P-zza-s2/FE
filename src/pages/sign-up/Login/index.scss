@@ -1,0 +1,48 @@
+@import 'theme.scss';
+
+.bg {
+  background-color: $Delay;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 50px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  width: 100%;
+}
+
+.sub-title {
+  margin-bottom: 7px;
+  color: #ff1515;
+  font-weight: 800;
+}
+
+.kakao-btn-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(159, 56, 56);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.kakao-btn {
+  width: 100%;
+  max-width: 328px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 8px;
+  background: #fae100;
+  cursor: pointer;
+}
+
+.character {
+  padding: 30px;
+}

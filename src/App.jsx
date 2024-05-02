@@ -17,8 +17,8 @@ import { Main } from './pages/Main';
 import MyProject from './pages/project/MyProject';
 import { ProjectAbout } from './pages/project/ProjectAbout';
 import ProjectDetail from './pages/project/ProjectDetail';
+import Login from './pages/sign-up/Login';
 import SignUp from './pages/sign-up/SignUp';
-import Start from './pages/Start';
 
 function App() {
   function setScreenSize() {
@@ -32,7 +32,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Start />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/mainpage" element={<Main></Main>} />
           <Route

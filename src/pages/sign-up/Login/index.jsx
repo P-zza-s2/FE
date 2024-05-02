@@ -1,13 +1,11 @@
-import './Start.scss';
+import './index.scss';
 
+import character from 'images/character.svg';
+import kakao from 'images/kakao.svg';
+import pzza from 'images/pzza.svg';
 import { useNavigate } from 'react-router-dom';
 
-import { userLogin } from '../api/project';
-import character from '../images/character.svg';
-import kakao from '../images/kakao.svg';
-import pzza from '../images/pzza.svg';
-
-const Start = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   const onCheckLogin = async () => {
@@ -49,4 +47,4 @@ const Start = () => {
   );
 };
 
-export default Start;
+export default Login;
