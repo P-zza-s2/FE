@@ -55,27 +55,3 @@
   width: 100%;
   height: fit-content;
 }
-
-.add-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 600px;
-  height: fit-content;
-  text-align: right;
-  padding: 24px 16px;
-  transition: opacity 0.3s ease;
-  opacity: 0.5;
-
-  &.color-change {
-    opacity: 1;
-  }
-}
-
-.add-icn {
-  cursor: pointer;
-  margin: 18px auto;
-}

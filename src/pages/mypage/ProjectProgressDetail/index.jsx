@@ -14,7 +14,7 @@ import folder from 'assets/icons/ic_folder.svg';
 import idea from 'assets/icons/ic_idea.svg';
 import pzza from 'assets/images/img_logo_pzza.svg';
 import Header from 'components/common/Header';
-import data from 'constant/project.json';
+import { mock } from 'constant/project.js';
 import { PROJECT_STEPS } from 'constant/projectSteps';
 import {
   useNavigate,
@@ -24,7 +24,7 @@ import {
 const ProjectDetail = () => {
   const param = useParams();
   const navigate = useNavigate();
-  const [projectData, setProjectData] = useState(data);
+  const [projectData, setProjectData] = useState(mock);
   const [myProjectProgress, setMyProjectProgress] = useState({});
   const [selectedStep, setSelectedStep] = useState(1);
 

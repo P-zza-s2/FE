@@ -1,3 +1,5 @@
+import './index.scss';
+
 import { useState } from 'react';
 
 import plus_icon from 'images/plus_icon.svg';
@@ -15,8 +17,8 @@ function AddProjectButton() {
   };
 
   return (
-    <div className={`add-container ${addClick ? 'color-change' : ''}`} onClick={handleClick}>
-      <img className="add-icn" src={plus_icon} />
+    <div className={`add-container ${addClick ? 'color-change' : ''}`}>
+      <img className="add-icn" src={plus_icon} onClick={handleClick} />
     </div>
   );
 }
