@@ -1,0 +1,62 @@
+@import 'theme.scss';
+
+p {
+  @include Button;
+  color: $gray_900;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.recommend-box {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0 48px 0;
+}
+.recommend {
+  width: 100%;
+  height: 52px;
+  background: $gray_100;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 16px;
+  color: $gray_900;
+  @include Button;
+}
+
+.center-box {
+  text-align: center;
+}
+
+.keyword-title {
+  @include Title4;
+  padding: 40px 0 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 방향 중앙 정렬 (필요한 경우) */
+  gap: 16px; /* 버튼 사이의 간격 */
+}
+
+.half-btn {
+  width: calc(100% - 32px);
+  max-width: 164px;
+  height: 56px;
+  border-radius: 8px;
+  color: $gray_50;
+  background: $primary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+
+  &.btn-clicked {
+    background: $gray_900;
+    color: #ffffff;
+  }
+}

@@ -2,6 +2,18 @@ import './App.css';
 
 import React, { useEffect } from 'react';
 
+import { CreateBoard } from 'pages/create-project/CreateBoard';
+import { CreateTopic } from 'pages/create-project/CreateTopic/CreateTopic';
+import {
+  Recommendation,
+} from 'pages/create-project/CreateTopic/Recommendation';
+import { ProjectAbout } from 'pages/detail-project/ProjectAbout';
+import { Main } from 'pages/home';
+import MyProject from 'pages/mypage/MyProjectList';
+import ProjectDetail from 'pages/mypage/ProjectProgressDetail';
+import Login from 'pages/sign-up/Login';
+import End from 'pages/sign-up/ProfileSetUp/End';
+import SignUp from 'pages/sign-up/ProfileSetUp/SignUp';
 import {
   BrowserRouter,
   Route,
@@ -9,16 +21,6 @@ import {
 } from 'react-router-dom';
 
 import Layout from './components/layout/Layout';
-import { CreateProject } from './pages/create-project/CreateProject';
-import { CreateTopic } from './pages/create-topic/CreateTopic';
-import { Recommendation } from './pages/create-topic/Recommendation';
-import End from './pages/End';
-import { Main } from './pages/Main';
-import MyProject from './pages/project/MyProject';
-import { ProjectAbout } from './pages/project/ProjectAbout';
-import ProjectDetail from './pages/project/ProjectDetail';
-import Login from './pages/sign-up/Login';
-import SignUp from './pages/sign-up/SignUp';
 
 function App() {
   function setScreenSize() {
@@ -34,15 +36,11 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/mainpage" element={<Main></Main>} />
-          <Route
-            path="/project-about"
-            element={<ProjectAbout></ProjectAbout>}
-          />
-
-          <Route path="/create-topic" element={<CreateTopic></CreateTopic>} />
+          <Route path="/mainpage" element={<Main />} />
+          <Route path="/project-about" element={<ProjectAbout />} />
+          <Route path="/create-topic" element={<CreateTopic />} />
           <Route path="/create-topic/keyword" element={<Recommendation />} />
-          <Route path="/create-project" element={<CreateProject />} />
+          <Route path="/create-project" element={<CreateBoard />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
           <Route path="/myproject/:id/finish" element={<End />} />

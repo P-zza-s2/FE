@@ -1,0 +1,38 @@
+@import './theme.scss';
+
+.option-container {
+  width: 156px;
+  height: 156px;
+  flex-grow: 1;
+  background: $gray_100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 16px;
+  color: $gray_500;
+
+  &.clicked {
+    background: $orange_50;
+    color: $primary;
+    border: 3px solid $primary;
+  }
+  &.dev {
+    background: $orange_50;
+    color: $primary;
+  }
+
+  &.pm {
+    background: #ffa6a6;
+    color: #ff3e3e;
+  }
+  &.design {
+    background: #cce7ff;
+    color: #53acff;
+  }
+}
+
+.change {
+  fill: green;
+}

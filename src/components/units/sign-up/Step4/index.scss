@@ -1,0 +1,10 @@
+@import 'src/theme.scss';
+
+.text-container .title {
+  @include Title4;
+}
+
+.text-container > p {
+  @include Body1;
+  color: $gray_600;
+}

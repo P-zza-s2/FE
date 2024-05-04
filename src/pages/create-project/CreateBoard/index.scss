@@ -1,0 +1,15 @@
+@import 'theme.scss';
+
+.option-container {
+  width: 156px;
+  height: 156px;
+  background: $gray_100;
+}
+
+.topic-container {
+  padding: 0 16px;
+  width: 360px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
