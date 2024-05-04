@@ -1,25 +1,11 @@
-import { useState } from 'react';
+import useToggle from 'hooks/useToggle';
 
-function ChipItem({ title, index, icon }) {
-  const [isClick, setIsClick] = useState([true, true, true, true]);
-  const [, setStatus] = useState();
-
-  //   const filteredData = data.filter((item) => {
-  //     if (isClick[0]) return true; // '전체'가 선택된 경우 모든 데이터 표시
-  //     let filterCondition = false;
-  //     if (isClick[1] && item.project_status === '모집중') filterCondition = true;
-  //     if (isClick[2] && item.project_status === '완료') filterCondition = true;
-  //     if (isClick[3] && item.project_status === '중단') filterCondition = true;
-  //     return filterCondition;
-  //   });
+function ChipItem({ title, icon }) {
+  const { isActive, toggle } = useToggle();
   return (
     <div
-      className={`chip ${isClick[index] ? 'active' : ''}`}
-      onClick={() => {
-        const newClick = isClick.map(() => !isClick[0]);
-        setIsClick(newClick);
-        setStatus(title);
-      }}
+      className={`chip ${isActive ? 'active' : ''}`}
+      onClick={() => toggle()}
     >
       {icon && <img src={icon} />}
       {title}

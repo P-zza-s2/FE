@@ -1,11 +1,11 @@
 import { ProjectCard } from 'components/ProjectCard/ProjectCard';
-import { mock } from 'constant/project';
+import { PROJECT_LIST_DATA } from 'constant/project';
 
 function ProjectListSection() {
   return (
     <div className="project-section">
       <ul>
-        {mock.map((item) => (
+        {PROJECT_LIST_DATA.map((item) => (
           <li key={item.project_id}>
             <ProjectCard
               id={item.project_id}

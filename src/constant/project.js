@@ -1,4 +1,4 @@
-export const mock = [
+export const PROJECT_LIST_DATA = [
   {
     project_id: 1,
     project_status: '모집중',
@@ -95,7 +95,8 @@ export const mock = [
     project_id: 5,
     project_status: '완료',
     project_name: '로봇 제어 시스템',
-    project_desc: '로봇을 제어하는 소프트웨어 및 하드웨어 시스템을 개발하는 프로젝트입니다.',
+    project_desc:
+      '로봇을 제어하는 소프트웨어 및 하드웨어 시스템을 개발하는 프로젝트입니다.',
     team_members: [
       {
         role: '기획',
@@ -210,7 +211,8 @@ export const mock = [
     project_id: 10,
     project_status: '모집중',
     project_name: '빅데이터 분석 플랫폼',
-    project_desc: '대용량 데이터를 분석하고 시각화하는 빅데이터 분석 플랫폼 개발 프로젝트입니다.',
+    project_desc:
+      '대용량 데이터를 분석하고 시각화하는 빅데이터 분석 플랫폼 개발 프로젝트입니다.',
     team_members: [
       {
         role: '기획',

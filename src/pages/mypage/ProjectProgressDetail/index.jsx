@@ -14,7 +14,7 @@ import folder from 'assets/icons/ic_folder.svg';
 import idea from 'assets/icons/ic_idea.svg';
 import pzza from 'assets/images/img_logo_pzza.svg';
 import Header from 'components/common/Header';
-import { mock } from 'constant/project.js';
+import { PROJECT_LIST_DATA } from 'constant/project.js';
 import { PROJECT_STEPS } from 'constant/projectSteps';
 import {
   useNavigate,
@@ -24,7 +24,7 @@ import {
 const ProjectDetail = () => {
   const param = useParams();
   const navigate = useNavigate();
-  const [projectData, setProjectData] = useState(mock);
+  const [projectData, setProjectData] = useState(PROJECT_LIST_DATA);
   const [myProjectProgress, setMyProjectProgress] = useState({});
   const [selectedStep, setSelectedStep] = useState(1);
 
@@ -75,7 +75,11 @@ const ProjectDetail = () => {
         <div className="project_steps">
           <ul className="steps_list">
             {PROJECT_STEPS.map((step, idx) => (
-              <li key={step.name} data-id={step.step - 1} onClick={(e) => selectProjectStep(e)}>
+              <li
+                key={step.name}
+                data-id={step.step - 1}
+                onClick={(e) => selectProjectStep(e)}
+              >
                 <img src={step.src} className="step_box" />
                 <div className="step_text">
                   <p>{idx + 1}일차</p>
@@ -90,7 +94,8 @@ const ProjectDetail = () => {
             </h2>
             <div className="info_box">
               <p className="desc_title">
-                STEP {Number(selectedStep) + 1}. {PROJECT_STEPS[selectedStep].name}
+                STEP {Number(selectedStep) + 1}.{' '}
+                {PROJECT_STEPS[selectedStep].name}
               </p>
               <p className="desc_text">{PROJECT_STEPS[selectedStep].desc}</p>
             </div>
