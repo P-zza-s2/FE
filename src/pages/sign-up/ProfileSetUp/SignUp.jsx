@@ -1,6 +1,6 @@
 import './SignUp.scss';
 
-import React, {
+import {
   useEffect,
   useState,
 } from 'react';
@@ -25,8 +25,8 @@ function SignUp() {
   const navigate = useNavigate();
   const [value, setValue] = useState(1);
   const [isClick, setIsClick] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(null);
+  const [, setIsLoading] = useState(false);
+  const [, setIsError] = useState(null);
   const [userValue, setUserValue] = useState(USER_INITAIL);
 
   const handleProgressClick = (newValue) => {
@@ -111,6 +111,7 @@ function SignUp() {
         return <CompletionPage />;
       case 5:
         navigate('../mainpage');
+        break;
       default:
         return null;
     }

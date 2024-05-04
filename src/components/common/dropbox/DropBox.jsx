@@ -5,7 +5,7 @@ import { useState } from 'react';
 import arrow from 'assets/icons/down-arrow.svg';
 
 export function DropBox({ children, onClick, onChange, value, placeholder }) {
-  const [role, setRole] = useState(value);
+  const [, setRole] = useState(value);
 
   const handleChange = (e) => {
     setRole(e.target.value);

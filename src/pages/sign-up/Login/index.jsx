@@ -1,5 +1,6 @@
 import './index.scss';
 
+import { userLogin } from 'api/project';
 import character from 'images/character.svg';
 import kakao from 'images/kakao.svg';
 import pzza from 'images/pzza.svg';

@@ -9,7 +9,7 @@ import activethirty from 'images/active-thirtyday.svg';
 import ten from 'images/tenday.svg';
 import thirty from 'images/thirtyday.svg';
 
-export function SelectGuide({ step, name, value, onChange }) {
+export function SelectGuide({ step, name, onChange }) {
   const [active, setActive] = useState([false, false]);
 
   const handleSelect = (selectedIndex) => {

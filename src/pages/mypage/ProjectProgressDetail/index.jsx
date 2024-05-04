@@ -1,6 +1,6 @@
 import './index.scss';
 
-import React, {
+import {
   useEffect,
   useState,
 } from 'react';
@@ -41,7 +41,7 @@ const ProjectDetail = () => {
     // 내 프로젝트 진행도 불러오는 쿼리
     const getMyProjectProgressQuery = async () => {
       try {
-        const data = await getMyProjectProgress({ projectId, progressId });
+        const data = await getMyProjectProgress({});
         setMyProjectProgress(data);
       } catch (error) {
         console.error('프로젝트 진행도를 불러오는 데 실패했습니다:', error);

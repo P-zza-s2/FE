@@ -4,12 +4,16 @@ module.exports = {
     es2021: true,
     node: true
   },
+
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'prettier'
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings'
   ],
+
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module'

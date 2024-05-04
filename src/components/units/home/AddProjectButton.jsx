@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import plus_icon from 'images/plus_icon.svg';
 import { useNavigate } from 'react-router-dom';
 
 function AddProjectButton() {

@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // BasicInfoPage.jsx
 import { DropBox } from 'components/common/dropbox/DropBox';
 import { Input } from 'components/common/input/Input';
 import Modal from 'components/common/modal/Modal';
+import { Step } from 'components/step/Step';
 
 function BasicInfoPage({ value, role_name, portfolio_name, role, portfolio, onRoleChange, onPortfolioChange }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [value_role, setValueRole] = useState(role);
-  const [value_portfolio, setValuePortfolio] = useState(portfolio);
+  const [, setValuePortfolio] = useState(portfolio);
 
   const handleChange = (name, value) => {
     if (name == role_name) {

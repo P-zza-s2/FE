@@ -1,8 +1,5 @@
 import './index.scss';
 
-// CompletionPage.jsx
-import React from 'react';
-
 function CompletionPage() {
   return (
     <div className="text-container">

@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 
 const SelectBox = ({ option, label }) => {
   const [selected, setSelected] = useState(option[0]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [, setIsOpen] = useState(false);
   const onSelectedHandler = (e) => {
     const { value } = e.target;
     setSelected(value);

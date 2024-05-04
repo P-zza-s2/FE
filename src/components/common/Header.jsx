@@ -1,6 +1,6 @@
 import './Header.scss';
 
-import React, {
+import {
   useEffect,
   useState,
 } from 'react';

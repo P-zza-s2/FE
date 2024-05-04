@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { instance } from './instance';
 
 // 회원가입 함수
@@ -15,7 +14,7 @@ export const UserSignUp = async (userData) => {
       // 엑세스 키가 없으면 false 반환
       return {
         success: false,
-        message: '회원가입 실패. 엑세스 키가 없습니다.',
+        message: '회원가입 실패. 엑세스 키가 없습니다.'
       };
     }
   } catch (error) {
@@ -33,8 +32,8 @@ export const userLogin = async (access_key) => {
     {}, // 두 번째 인자로 빈 요청 본문
     {
       headers: {
-        ACCESS_KEY: access_key, // 헤더는 이곳에
-      },
+        ACCESS_KEY: access_key // 헤더는 이곳에
+      }
     }
   );
   // 응답 처리
@@ -44,9 +43,7 @@ export const userLogin = async (access_key) => {
 // 전체 프로젝트 조회
 export const getAllProjects = async ({ offset, id }) => {
   try {
-    const response = await instance.get(
-      `/projects?offset=${offset}&status=${id}`
-    );
+    const response = await instance.get(`/projects?offset=${offset}&status=${id}`);
     console.log(response.data);
     return response.data;
   } catch (error) {
@@ -63,8 +60,8 @@ export const getMyProject = async (access_key) => {
       // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
     return response.data;
@@ -78,8 +75,8 @@ export const getMyProject = async (access_key) => {
 export const ProjectCreation = async (data, access_key) => {
   const response = await instance.post('/project', data, {
     headers: {
-      ACCESS_KEY: access_key, // 헤더는 이곳에
-    },
+      ACCESS_KEY: access_key // 헤더는 이곳에
+    }
   });
   console.log(response.data);
 };
@@ -91,8 +88,8 @@ export const getMyProjectInProgress = async (access_key) => {
       '/my-projects/in-progress', // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
 
@@ -110,8 +107,8 @@ export const getMyProjectPending = async (access_key) => {
       '/my-projects/under-review', // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
     return response.data;
@@ -128,8 +125,8 @@ export const getMyProjectCompleted = async (access_key) => {
       '/my-projects/completion', // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
     return response.data;
@@ -146,8 +143,8 @@ export const getMyProjectRejected = async (access_key) => {
       '/my-projects/rejection', // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
     return response.data;
@@ -164,8 +161,8 @@ export const getMyProjectStoped = async (access_key) => {
       '/my-projects/stop', // 두 번째 인자로 빈 요청 본문
       {
         headers: {
-          ACCESS_KEY: access_key, // 헤더는 이곳에
-        },
+          ACCESS_KEY: access_key // 헤더는 이곳에
+        }
       }
     );
     return response.data;
@@ -180,8 +177,8 @@ export const getProjectDetail = async (projectId, access_key) => {
   try {
     const response = await instance.get(`/project/${projectId}`, {
       headers: {
-        ACCESS_KEY: access_key, // 헤더는 이곳에
-      },
+        ACCESS_KEY: access_key // 헤더는 이곳에
+      }
     });
     return response.data;
   } catch (error) {
@@ -193,9 +190,7 @@ export const getProjectDetail = async (projectId, access_key) => {
 // 내 프로젝트 진행도 조회
 export const getMyProjectProgress = async ({ projectId, progressId }) => {
   try {
-    const response = await instance.get(
-      `/project/${projectId}/progress/${progressId}`
-    );
+    const response = await instance.get(`/project/${projectId}/progress/${progressId}`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -204,19 +199,15 @@ export const getMyProjectProgress = async ({ projectId, progressId }) => {
 };
 
 // 산출물 제출하기
-export const postMyProjectDocument = async (
-  projectId,
-  progressId,
-  document
-) => {
+export const postMyProjectDocument = async (projectId, progressId, document) => {
   try {
     const response = await instance.post(
       `/projects/${projectId}/progress/${progressId}/doc`,
       { document },
       {
         headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+          'Content-Type': 'multipart/form-data'
+        }
       }
     );
     return response.data;

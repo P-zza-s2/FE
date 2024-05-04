@@ -1,9 +1,9 @@
-import React from 'react';
+import Header from 'components/common/Header';
 
-const MyProjectDetail = ({ title, ...rest }) => {
+const MyProjectDetail = ({ title }) => {
   return (
     <div>
-      <Headers title={title} usedTyped="myProject" />
+      <Header title={title} usedTyped="myProject" />
     </div>
   );
 };

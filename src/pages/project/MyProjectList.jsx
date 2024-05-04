@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../../components/elements/Header';
-import './MyProject.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
+import Header from 'components/common/Header';
+import { ProjectCard } from 'components/ProjectCard/ProjectCard';
+import { useLocation } from 'react-router-dom';
+
+import
+
+{ useEffect } from 'react';
 
 const MyProjectList = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const headerTitle = location.state?.headerTitle || '기본 제목';
   const projectData = location.state?.projectData || 'null';

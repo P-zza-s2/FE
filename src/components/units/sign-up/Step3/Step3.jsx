@@ -1,10 +1,11 @@
-// ExperienceInputPage.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 
+// ExperienceInputPage.jsx
 import { DropBox } from 'components/common/dropbox/DropBox';
 import Modal from 'components/common/modal/Modal';
+import { Step } from 'components/step/Step';
 
-function ExperienceInputPage({ value, name, experience, onChange }) {
+function ExperienceInputPage({ value, experience, onChange }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [value_exp, setValueExp] = useState(experience);
   const handleChange = (name, val) => {
@@ -13,8 +14,6 @@ function ExperienceInputPage({ value, name, experience, onChange }) {
       onChange(name, 0);
     } else if (val === '3년 미만') {
       onChange(name, 3);
-    } else if (val === '5년 미만') {
-      onChange(name, 5);
     } else if (val === '5년 미만') {
       onChange(name, 5);
     } else {

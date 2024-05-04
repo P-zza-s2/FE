@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { CreateBoard } from 'pages/create-project/CreateBoard';
 import { CreateTopic } from 'pages/create-project/CreateTopic/CreateTopic';
@@ -43,7 +43,7 @@ function App() {
           <Route path="/create-project" element={<CreateBoard />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
-          <Route path="/myproject/list" element={<MyProjectList />} />
+          {/* <Route path="/myproject/list" element={<MyProjectList />} /> */}
           <Route path="/myproject/:id/finish" element={<End />} />
         </Routes>
       </Layout>

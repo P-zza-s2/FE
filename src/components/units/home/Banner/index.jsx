@@ -1,3 +1,5 @@
+import bomb from 'images/bomb.svg';
+
 function Banner() {
   return (
     <div className="banner">
