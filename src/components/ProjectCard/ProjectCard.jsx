@@ -1,8 +1,15 @@
 import './ProjectCard.scss';
 
+import { useNavigate } from 'react-router-dom';
+
 export function ProjectCard({ id, status, name, desc, mem }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="card-container">
+    <div
+      className="card-container"
+      onClick={() => navigate(`../project-about/${id}`)}
+    >
       <div className="elements">
         <div className="pj-header">
           <span

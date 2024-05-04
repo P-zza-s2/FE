@@ -41,6 +41,7 @@ export function CreateBoard() {
 
   useEffect(() => {
     localStorage.setItem('project', []);
+
     const handleCreateProject = async () => {
       const storedAccessKey = localStorage.getItem('ACCESS_KEY');
       if (storedAccessKey) {

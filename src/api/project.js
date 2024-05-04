@@ -55,6 +55,25 @@ export const getAllProjects = async ({ offset, id }) => {
   }
 };
 
+// 내 프로젝트 조회
+export const getMyProject = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects',
+      // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 // 프로젝트 등록
 export const ProjectCreation = async (data, access_key) => {
   const response = await instance.post('/project', data, {
@@ -65,10 +84,105 @@ export const ProjectCreation = async (data, access_key) => {
   console.log(response.data);
 };
 
-// 프로젝트 상세페이지 조회
-export const getProjectDetail = async (projectId) => {
+// 내 프로젝트 진행중 조회
+export const getMyProjectInProgress = async (access_key) => {
   try {
-    const response = await instance.get(`/project/${projectId}`);
+    const response = await instance.get(
+      '/my-projects/in-progress', // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// 내 프로젝트 심사중 조회
+export const getMyProjectPending = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects/under-review', // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// 내 프로젝트 완료 조회
+export const getMyProjectCompleted = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects/completion', // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// 내 프로젝트 거절 조회
+export const getMyProjectRejected = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects/rejection', // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// 내 프로젝트 중단 조회
+export const getMyProjectStoped = async (access_key) => {
+  try {
+    const response = await instance.get(
+      '/my-projects/stop', // 두 번째 인자로 빈 요청 본문
+      {
+        headers: {
+          ACCESS_KEY: access_key, // 헤더는 이곳에
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// 프로젝트 상세페이지 조회
+export const getProjectDetail = async (projectId, access_key) => {
+  try {
+    const response = await instance.get(`/project/${projectId}`, {
+      headers: {
+        ACCESS_KEY: access_key, // 헤더는 이곳에
+      },
+    });
     return response.data;
   } catch (error) {
     console.error(error);
@@ -82,17 +196,6 @@ export const getMyProjectProgress = async ({ projectId, progressId }) => {
     const response = await instance.get(
       `/project/${projectId}/progress/${progressId}`
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 조회
-export const getMyProject = async () => {
-  try {
-    const response = await instance.get('/my-projects');
     return response.data;
   } catch (error) {
     console.error(error);
@@ -116,61 +219,6 @@ export const postMyProjectDocument = async (
         },
       }
     );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 진행중 조회
-export const getMyProjectInProgress = async () => {
-  try {
-    const response = await instance.get('/my-projects/in-progress');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 심사중 조회
-export const getMyProjectPending = async () => {
-  try {
-    const response = await instance.get('/my-projects/under-review');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 완료 조회
-export const getMyProjectCompleted = async () => {
-  try {
-    const response = await instance.get('/my-projects/completion');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 거절 조회
-export const getMyProjectRejected = async () => {
-  try {
-    const response = await instance.get('/my-projects/rejection');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-// 내 프로젝트 중단 조회
-export const getMyProjectStoped = async () => {
-  try {
-    const response = await instance.get('/my-projects/stop');
     return response.data;
   } catch (error) {
     console.error(error);

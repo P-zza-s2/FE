@@ -43,6 +43,7 @@ function App() {
           <Route path="/create-project" element={<CreateBoard />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
+          <Route path="/myproject/list" element={<MyProjectList />} />
           <Route path="/myproject/:id/finish" element={<End />} />
         </Routes>
       </Layout>

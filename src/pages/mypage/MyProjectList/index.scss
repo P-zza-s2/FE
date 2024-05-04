@@ -16,24 +16,35 @@
     flex-direction: column;
     justify-content: center;
     width: calc(50% - 8px);
-    height: 126px;
+    height: fit-content;
     padding: 0 14px;
     border: 1px solid $gray_300;
     border-radius: 8px;
     background-color: $gray_50;
 
-    & p:first-child {
-      width: 25px;
-      height: 25px;
+    & div > p:first-child {
       border-radius: 13px;
-      padding: 5px 9px;
+      padding: 5px 16px;
       background-color: $positive;
       color: #fff;
+      display: inline;
+      margin: 0 5px;
+      justify-content: center;
       @include Caption1;
     }
 
-    & p:last-child {
+    & p:first-child {
       @include Subheadline2;
+      padding-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    & div > img {
+      padding: 8px 0;
+    }
+    & div:last-child {
+      text-align: center;
     }
   }
 }
