@@ -1,13 +1,11 @@
 import './App.css';
 
-import { useEffect } from 'react';
-
 import { CreateBoard } from 'pages/create-project/CreateBoard';
 import { CreateTopic } from 'pages/create-project/CreateTopic/CreateTopic';
 import {
   Recommendation,
 } from 'pages/create-project/CreateTopic/Recommendation';
-import { ProjectAbout } from 'pages/detail-project/ProjectAbout';
+import ProjectDetailPage from 'pages/detail-project';
 import { Main } from 'pages/home';
 import MyProject from 'pages/mypage/MyProjectList';
 import ProjectDetail from 'pages/mypage/ProjectProgressDetail';
@@ -23,13 +21,6 @@ import {
 import Layout from './components/layout/Layout';
 
 function App() {
-  function setScreenSize() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  useEffect(() => {
-    setScreenSize();
-  });
   return (
     <BrowserRouter>
       <Layout>
@@ -37,7 +28,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/project-about" element={<ProjectAbout />} />
+          <Route path="/project/:id" element={<ProjectDetailPage />} />
           <Route path="/create-topic" element={<CreateTopic />} />
           <Route path="/create-topic/keyword" element={<Recommendation />} />
           <Route path="/create-project" element={<CreateBoard />} />

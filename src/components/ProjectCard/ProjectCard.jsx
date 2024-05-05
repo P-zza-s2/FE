@@ -8,7 +8,7 @@ export function ProjectCard({ id, status, name, desc, mem }) {
   return (
     <div
       className="card-container"
-      onClick={() => navigate(`../project-about/${id}`)}
+      onClick={() => navigate(`../project/${id}`)}
     >
       <div className="elements">
         <div className="pj-header">

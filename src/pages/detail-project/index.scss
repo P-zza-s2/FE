@@ -12,7 +12,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 22px;
+  padding: 8px 22px;
 }
 
 .title-header {
@@ -44,7 +44,8 @@
   display: flex;
   flex-direction: column;
   padding: 24px 16px 8px;
-  color: white;
+  color: rgb(51, 47, 45);
+
   @include Button2;
 
   .item {
@@ -93,4 +94,28 @@
   padding: 10px 18px;
   border-radius: 8px;
   @include Button2;
+}
+
+.section-container {
+  padding-bottom: 100px;
+}
+
+.sticky-footer {
+  height: fit-content;
+  background-color: #ffffff;
+  color: white;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.footer-button {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  color: white;
+  background: $primary;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  margin: 18px auto;
 }
