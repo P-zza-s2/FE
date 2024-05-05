@@ -1,0 +1,78 @@
+@import 'theme.scss';
+
+.topic-bg {
+  background-color: $orange_700;
+  height: 100vh;
+  margin: 0;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  .image {
+    margin: 102 99px;
+    text-align: center;
+  }
+}
+.topic-title {
+  padding-bottom: 83px;
+}
+
+.topic-title > h3 {
+  @include Title4;
+  color: white;
+  padding-bottom: 8px;
+}
+
+.topic-title > p {
+  color: white;
+}
+
+.select-btn {
+  width: calc(100% - 32px);
+  max-width: 578px;
+  height: 56px;
+  border-radius: 8px;
+  color: $gray_50;
+  background: $secondary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+
+  &.btn-clicked {
+    background: $gray_900;
+    color: #ffffff;
+  }
+}
+.selectbtn-container {
+  display: flex;
+  gap: 10px;
+  padding: 25px 0;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  .half-button {
+    width: 100%;
+    max-width: 328px;
+    height: 56px;
+    border-radius: 8px;
+    color: white;
+    background: $primary;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin: 18px auto;
+  }
+}

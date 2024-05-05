@@ -1,7 +1,7 @@
 import './App.css';
 
 import { CreateBoard } from 'pages/create-project/CreateBoard';
-import { CreateTopic } from 'pages/create-project/CreateTopic/CreateTopic';
+import CreateProjectPage from 'pages/create-project/CreateProjectPage';
 import {
   Recommendation,
 } from 'pages/create-project/CreateTopic/Recommendation';
@@ -29,9 +29,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/project/:id" element={<ProjectDetailPage />} />
-          <Route path="/create-topic" element={<CreateTopic />} />
+          <Route path="/create-project" element={<CreateProjectPage />} />
           <Route path="/create-topic/keyword" element={<Recommendation />} />
-          <Route path="/create-project" element={<CreateBoard />} />
+          <Route path="/create-board" element={<CreateBoard />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
           {/* <Route path="/myproject/list" element={<MyProjectList />} /> */}

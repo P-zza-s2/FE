@@ -10,7 +10,7 @@ function AddProjectButton() {
   const handleClick = () => {
     toggle();
     setTimeout(() => {
-      navigate('/create-topic');
+      navigate('/create-project');
     }, 200);
   };
 
