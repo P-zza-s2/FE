@@ -29,7 +29,7 @@ const INITAIL = {
   ]
 };
 
-export function CreateBoard() {
+export function CreateBoardPage() {
   const [valueStep, setValueStep] = useState(1);
   const [isClick, setIsClick] = useState(false);
   const [values, setValues] = useState(INITAIL);
@@ -64,16 +64,39 @@ export function CreateBoard() {
     }
   }, [valueStep, values]);
 
-  const renderContent = () => {
-    switch (valueStep) {
-      case 1:
-        return <CreateTitle name="project_name" step={valueStep} value={values.project_name} onChange={handleChange} />;
-      case 2:
-        return <SelectGuide name="period" step={valueStep} value={values.period} onChange={handleChange} />;
-      case 3:
-        return <SelectMem name="team_members" step={valueStep} value={values.team_members} onChange={handleChange} />;
-      case 4:
-        return (
+  return (
+    <>
+      <Header
+        title="프로젝트 생성"
+        valueStep={valueStep}
+        onChange={(value) => setValueStep(value)}
+      />
+      <div className="topic-container">
+        {valueStep === 1 && (
+          <CreateTitle
+            name="project_name"
+            step={valueStep}
+            value={values.project_name}
+            onChange={handleChange}
+          />
+        )}
+        {valueStep === 2 && (
+          <SelectGuide
+            name="period"
+            step={valueStep}
+            value={values.period}
+            onChange={handleChange}
+          />
+        )}
+        {valueStep === 3 && (
+          <SelectMem
+            name="team_members"
+            step={valueStep}
+            value={values.team_members}
+            onChange={handleChange}
+          />
+        )}
+        {valueStep === 4 && (
           <ExplainProject
             desc_name="project_desc"
             url_name="chat_url"
@@ -82,19 +105,9 @@ export function CreateBoard() {
             chat_url={values.chat_url}
             onChange={handleChange}
           />
-        );
-      case 5:
-        return <CreateDone />;
-
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <>
-      <Header title="프로젝트 생성" valueStep={valueStep} onChange={(value) => setValueStep(value)}></Header>
-      <div className="topic-container">{renderContent()}</div>
+        )}
+        {valueStep === 5 && <CreateDone />}
+      </div>
       <Button
         className={`button ${isClick ? 'clicked' : ''}`}
         onClick={() => {

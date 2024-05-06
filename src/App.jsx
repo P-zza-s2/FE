@@ -1,6 +1,6 @@
 import './App.css';
 
-import { CreateBoard } from 'pages/create-project/CreateBoard';
+import { CreateBoardPage } from 'pages/create-project/CreateBoardPage';
 import CreateProjectPage from 'pages/create-project/CreateProjectPage';
 import {
   Recommendation,
@@ -31,7 +31,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetailPage />} />
           <Route path="/create-project" element={<CreateProjectPage />} />
           <Route path="/create-topic/keyword" element={<Recommendation />} />
-          <Route path="/create-board" element={<CreateBoard />} />
+          <Route path="/create-board" element={<CreateBoardPage />} />
           <Route path="/myproject/:id" element={<ProjectDetail />} />
           <Route path="/myproject" element={<MyProject />} />
           {/* <Route path="/myproject/list" element={<MyProjectList />} /> */}
