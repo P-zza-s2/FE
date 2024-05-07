@@ -23,7 +23,7 @@ const Header = ({ title, ...rest }) => {
   };
 
   useEffect(() => {
-    if (rest.valueStep === 0) navigate('../mainpage');
+    if (rest.valueStep === 0) navigate('/');
   });
 
   const dropMenuHandler = () => {

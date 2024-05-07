@@ -2,21 +2,20 @@
 
 .btn-container {
   position: fixed;
-  bottom: 5px;
-  left: 0;
+  z-index: 100;
+  bottom: 0px;
   width: 100%;
-  height: fit-content;
-  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
   color: white;
+  background-color: rgb(255, 255, 255);
   padding: 24px 16px;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
   .button {
     width: 100%;
     max-width: 328px;
     height: 56px;
-    border-radius: 8px;
+    border-radius: 999px;
     color: white;
     background: gray;
     cursor: pointer;

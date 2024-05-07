@@ -1,11 +1,16 @@
-import './ExplainProject.scss';
-
 import { useState } from 'react';
 
 import { Input } from 'components/common/input/Input';
 import { Step } from 'components/step/Step';
 
-export function ExplainProject({ step, desc_name, url_name, desc, chat_url, onChange }) {
+export function ExplainProject({
+  step,
+  desc_name,
+  url_name,
+  desc,
+  chat_url,
+  onChange
+}) {
   const [desc_val, setDescVal] = useState(desc);
   const [url_val, setURLVal] = useState(chat_url);
 
@@ -31,7 +36,12 @@ export function ExplainProject({ step, desc_name, url_name, desc, chat_url, onCh
         소개
       </Input>
 
-      <Input name={url_name} value={url_val} placeholder="입력해주세요" onChange={handleUrlChange}>
+      <Input
+        name={url_name}
+        value={url_val}
+        placeholder="입력해주세요"
+        onChange={handleUrlChange}
+      >
         소통 채널
       </Input>
     </div>

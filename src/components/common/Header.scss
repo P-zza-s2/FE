@@ -9,6 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
+  z-index: 100;
 
   & h1 {
     @include Subheadline;

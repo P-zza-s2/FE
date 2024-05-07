@@ -6,15 +6,16 @@ import {
 } from 'react';
 
 import { ProjectCreation } from 'api/project';
-import { Button } from 'components/common/button/Button';
 import Header from 'components/common/Header';
-import { CreateTitle } from 'components/units/projects/step1-title/CreateTitle';
-import { SelectGuide } from 'components/units/projects/step2-type/SelectGuide';
-import { SelectMem } from 'components/units/projects/step3-member/SelectMem';
+import { CreateDone } from 'components/units/projects/create/CreateDone';
+import { CreateTitle } from 'components/units/projects/create/CreateTitle';
 import {
   ExplainProject,
-} from 'components/units/projects/step4-intro/ExplainProject';
-import { CreateDone } from 'components/units/projects/step5-finish/CreateDone';
+} from 'components/units/projects/create/ExplainProject';
+import NavigationButton
+  from 'components/units/projects/create/NavigationButton';
+import { SelectGuide } from 'components/units/projects/create/SelectGuide';
+import { SelectMem } from 'components/units/projects/create/SelectMem';
 
 const INITAIL = {
   project_name: '',
@@ -31,7 +32,7 @@ const INITAIL = {
 
 export function CreateBoardPage() {
   const [valueStep, setValueStep] = useState(1);
-  const [isClick, setIsClick] = useState(false);
+
   const [values, setValues] = useState(INITAIL);
 
   const handleChange = (name, val) => {
@@ -108,15 +109,7 @@ export function CreateBoardPage() {
         )}
         {valueStep === 5 && <CreateDone />}
       </div>
-      <Button
-        className={`button ${isClick ? 'clicked' : ''}`}
-        onClick={() => {
-          setValueStep(valueStep + 1);
-          setIsClick(true);
-        }}
-      >
-        {valueStep === 5 ? '홈으로' : '다음'}
-      </Button>
+      <NavigationButton valueStep={valueStep} setValueStep={setValueStep} />
     </>
   );
 }

@@ -1,5 +1,3 @@
-import './CreateDone.scss';
-
 import project from 'assets/icons/project_icon.svg';
 
 export function CreateDone() {

@@ -1,24 +1,20 @@
 import './Option.scss';
 
-import { useState } from 'react';
+export function Option({ src, isActive, children, onClick }) {
+  // const [active, setActive] = useState(false);
 
-export function Option({ children, onSelect, src, active, className }) {
-  const [isClick, setIsClick] = useState(false);
-  const [colors, setColors] = useState(className);
+  // const handleSelect = () => {
+  //   // const newActive = active.map((_, idx) => idx === selectedIndex);
+  //   // setActive(newActive);
 
-  const handleChange = (index) => {
-    onSelect(index);
-    setIsClick(!isClick);
-    setColors(className);
-    console.log(className);
-  };
+  //   setActive((prev) => !prev);
+  //   onChange(name, 1);
+  // };
 
   return (
     <div
-      className={`option-container ${active ? 'clicked' : ''} ${
-        isClick ? colors : ''
-      }`}
-      onClick={handleChange}
+      className={`option-container ${isActive ? 'clicked' : ''}`}
+      onClick={onClick}
     >
       <img src={src} alt="option icon" />
       <div>{children}</div>

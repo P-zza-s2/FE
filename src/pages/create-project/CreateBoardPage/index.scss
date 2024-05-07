@@ -8,8 +8,70 @@
 
 .topic-container {
   padding: 0 16px;
-  width: 360px;
   height: 100%;
   position: relative;
   margin: 0 auto;
+}
+
+//select-guide
+.frame {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.message {
+  background: $gray_100;
+  color: $gray_900;
+  width: 100%;
+  height: auto;
+  padding: 14px;
+  border-radius: 8px;
+  margin-top: 32px;
+  color: $gray_800;
+  font-size: 14px;
+}
+//select-mem
+.mem-frame {
+  width: 100%;
+  flex-grow: 1;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.row {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+//explain-project
+.textbox {
+  height: 120px;
+}
+//done
+.done-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.done-text {
+  align-items: flex-start;
+  margin-top: 54px;
+  color: $gray_900;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.project-img {
+  padding: 28px 16px;
 }
